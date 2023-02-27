@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+.container {
+    width: 82vw;
+      background-image: url("/images/starry1.png"), url("/images/starry2.png");
+   background-repeat: no-repeat, no-repeat;
+   background-position:  top left, top left;
+}
+
+.container .main {
+     padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main h2 {
+      font-family: Inter;
+    color: white;
+    font-size: 18px;
+  letter-spacing: 0.9px;
+}
+
+.main button {
+    width: 8em;
+    height: 40px;
+    background-color: #FF242A;
+    border-radius: 8px;
+    color: white;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.icons img.img1 {
+    width: 23px;
+    height: 23px;
+    margin-right: 30px;
+    margin-top: 5px;
+}
+
+.icons img.img2 {
+    width: 17x;
+    height: 17px;
+    margin-right: 35px;
+}
+
+.referbox {
+    width: 63vw;
+    height: 73vh;
+  
+    background-color: #1C2136;
+    margin-top: 1em;
+    margin-left: 5em;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    z-index: 1;
+    
+}
+
+.referboxtext{
+    padding-top: 50px;
+    padding-left: 60px;
+}
+
+.referboxtext h1 {
+color: white;
+font-family: Open sans;
+font-weight: 200;
+font-size: 40px;
+}
+
+.referboxtext h4 {
+    color: white;
+    font-family: Open sans;
+    font-weight: 50;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.images .image1 {
+    margin-left: 8.5em;
+      width:75%;
+    
+}
+
+.images .image2 {
+margin-top: -16em;
+    margin-left: 3em;
+    width: 70%;
+    z-index: 10;
+}
+
+.referalcodebox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 17%;
+    border: 1px solid white;
+margin-top: 25px;
+
+}
+
+.referalcodebox div p {
+    color: white;
+    font-family: Inter;
+
+}
+
+.referalcodebox button {
+    width: 40%;
+    height: 7vh;
+border-radius: 4px;
+    color: white;
+    background-color: #FF242A;
+    font-family: Inter;
+}

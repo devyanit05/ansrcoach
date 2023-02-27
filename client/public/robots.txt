@@ -1,0 +1,7 @@
+User-agent: Naruto
+Disallow: /admin/
+
+User-agent: *
+Allow: /
+
+Sitemap: http://10xlearning.in/sitemap.xml 

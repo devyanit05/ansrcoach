@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Laila:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+
+.container {
+  padding: 30px 70px;
+}
+
+.container .main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #252a3f;
+  width: 95%;
+  padding: 40px 60px;
+  border-radius: 4px;
+}
+
+.main div h3 {
+  font-family: Montserrat;
+  font-size: 30px;
+  color: white;
+}
+
+.main div p {
+  font-family: Open sans;
+  color: #f4f4f4;
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  margin-top: 15px;
+}
+
+.main .formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.formSection input {
+  width: 40vw;
+  height: 10vh;
+  border: 1px solid #f4f4f4;
+  color: white;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.main button {
+  width: 40vw;
+  height: 9vh;
+  color: white;
+  background-color: #ff242a;
+  border-radius: 4px;
+  font-family: Open sans;
+  margin-top: 30px;
+}
+
+.animation {
+  width: 30vw;
+}
+
+.main .imageSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.infoSection {
+  margin-left: 2em;
+  margin-top: -3em;
+}
+
+.infoSection p {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: Inter;
+  font-size: 24px;
+}
+
+.infoSection p img {
+  width: 15px;
+  margin-right: 1em;
+}
+
+@media only screen and (max-width: 860px) {
+  .container .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #252a3f;
+    width: 80vw;
+    padding: 20px 30px;
+    border-radius: 4px;
+  }
+  .main .imageSection {
+    display: none;
+  }
+  .formSection input {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .container .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #252a3f;
+    width: 70vw;
+    padding: 20px 30px;
+    border-radius: 4px;
+  }
+}

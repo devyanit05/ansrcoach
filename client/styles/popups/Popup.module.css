@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.modal {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(135, 135, 135, 0.63);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.main {
+    width: 700px;
+    max-width: 90%;
+    max-height: 95vh;
+    overflow-y: auto;
+    background: #13192e;
+    border-radius: 12px;
+    padding: 25px 45px;
+    text-align: right;
+}
+
+.main > svg {
+    fill: #6b757e99;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+
+.main .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header h2 {
+    font-family: Inter;
+    font-size: 30px;
+    color: #ff242a;
+    margin-left: 15px;
+    letter-spacing: 0.6px;
+}
+
+.main h4 {
+    color: #898989;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 100;
+   position: relative;
+   display: flex;
+   justify-content: flex-start;
+   left: 1em;
+ top: 1.4em;
+}
+
+.header img {
+    max-height: 50px;
+    object-fit: cover;
+}
+
+.textfield {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+justify-content: center;
+   gap: 10px;
+   margin-top: 35px;
+}
+
+.textfield div {
+    width: 95%;
+    height: 11vh;
+    border-style: groove;
+    border:1.5px solid #616161;
+    border-radius: 5px;
+}
+
+.textfield div input {
+    width: 95%;
+    height: 10vh;
+   color: white;
+}
+
+.textfield div select {
+    width: 95%;
+    height: 11vh;
+    color: #898989;
+}
+
+
+.main button {
+    width: 20%;
+    height: 7vh;
+    color: white;
+    background-color: #878787;
+    border-radius: 4px;
+    font-family: Inter;
+    margin-top: 18px;
+    margin-right: 14px;
+}
+
+.checkbox {
+
+    position: relative;
+   display: flex;
+   justify-content: flex-start;
+   left: 1em;
+   top: 1em;
+
+}
+
+.checkbox label {
+    color: white;
+    font-family: Inter;
+    font-weight: 100;
+font-size: 12px;
+}
+
+.dateSection {
+    display: flex;
+    flex-direction: row;
+justify-content: space-evenly;
+margin-top: 40px;
+}
+
+.dateSection div {
+    width: 17%;
+    height: 8vh;
+    background-color: #A5A5A5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+}
+
+.dateSection div p {
+    font-family: Inter;
+    font-size: 12px;
+}
+
+.timeSection {
+    width: 96%;
+    height: 30vh;
+    background-color: #1C2136;
+    margin-top: 25px;
+    margin-left: 12px;
+}
+
+.time1 {grid-area: time1;}
+.time2 {grid-area: time2;}
+.time3 {grid-area: time3;}
+.time4 {grid-area: time4;}
+.time5 {grid-area: time5;}
+.time6 {grid-area: time6;}
+.time7 {grid-area: time7;}
+.time8 {grid-area: time8;}
+
+.timecontainer {
+
+     display: grid;
+  grid-template-areas:
+    'time1 time2 time3 time4'
+    'time5 time6 time7 time8';
+  gap: 30px 20px;
+  position: relative; 
+  top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.timecontainer div {
+     background-color: #1C2136;
+  text-align: center;
+  font-size:30px;
+  border-radius: 5px;
+  border: dotted #898989;
+  width: 100%;
+  height: 6vh;
+  padding: 15px;
+  
+}
+
+.timecontainer div p {
+    font-size: 11px;
+    font-family: Inter;
+    color: white;
+margin-top: -6px;
+}

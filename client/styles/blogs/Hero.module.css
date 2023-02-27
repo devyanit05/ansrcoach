@@ -1,0 +1,261 @@
+@import url("https://fonts.googleapis.com/css2?family=Laila:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+.body {
+  background-image: url("/images/group1.png");
+  background-repeat: no-repeat;
+}
+
+.container {
+  padding: 30px 40px;
+  background-image: url("/images/spaceship.png"), url("/images/group.png"),
+    url("/images/group4.png"), url("/images/group2.png"),
+    url("/images/group3.png");
+  background-position: 0em 23em, 45em -6em, 1em 10em, 21em 16em, 12em 7em;
+  background-repeat: no-repeat;
+}
+.headerh2 {
+  font-size: 55px;
+  color: white;
+  text-align: center;
+  font-family: Laila;
+  margin-left: 6em;
+  margin-right: 6em;
+  margin-top: 1.7em;
+  line-height: 1.3em;
+}
+
+.container img {
+  width: 26%;
+  position: relative;
+  margin-top: 1em;
+}
+
+.headerP {
+  font-family: Open sans;
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  margin-left: 11em;
+  margin-right: 11em;
+  margin-top: 1em;
+}
+
+.grid {
+  display: flex;
+ flex-direction: row;
+  gap: 20px;
+  margin-top: 9em;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.grid div {
+  text-align: center;
+  font-size: 30px;
+  border-radius: 8px;
+}
+
+.grid1 {
+  width: 55vw;
+  height: 110vh;
+  margin-bottom: 10px;
+  background-color: #252A3F!important;
+}
+
+.sectionOne {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionOne img {
+  width: 55vw;
+  margin-top: 0.01em;
+}
+
+.sectionOne .sectionText {
+  margin-top: 0.5em;
+}
+
+.sectionText h3 {
+  font-family: Open sans;
+  font-size: 30px;
+  letter-spacing: 0.7px;
+  color: white;
+  text-align: left;
+  margin-right: 40px;
+  margin-left: 30px;
+}
+
+.sectionText p {
+  font-family: Open sans;
+  letter-spacing: 0.9px;
+  color: white;
+  font-weight: 200;
+  font-size: 17px;
+  text-align: left;
+  margin-top: 15px;
+  margin-right: 40px;
+  margin-left: 30px;
+}
+
+.sectionText a {
+  color: #ff242a;
+  font-family: Open sans;
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: -30.4em;
+  margin-top: 5em;
+}
+
+.searchbar {
+  background-color: #252A3F;
+  height: 22vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchbarText  {
+  margin-top: 15px;
+  font-size: 16px;
+  font-family: Open sans;
+  font-weight: 500;
+  color: white;
+  text-align: left;
+  margin-left: 23px;
+}
+
+.searchbar .searchInput {
+  width: 32vw;
+  height: 8.5vh;
+  background-color: #898989;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.7em;
+}
+
+.searchbar .searchInput input {
+  width: 27vw;
+  height: 8.5vh;
+  background-color: white;
+  border-radius: 6px;
+  padding: 20px;
+  font-family: Open sans;
+}
+
+.searchbar .searchIcon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 8.5vh;
+  background-color: #898989;
+  gap: 10px;
+}
+
+.searchInput img {
+  width: 18px;
+  margin-top: -0.1em;
+
+}
+
+.searchIcon p {
+  font-size: 15px;
+  color: white;
+  font-family: Open sans;
+  margin-left: -5px;
+}
+
+.articleSection {
+  height: 55vh;
+  background-color: #252A3F;
+  margin-top: 20px;
+}
+
+.articleSectionHeaderText {
+font-family: Open sans;
+font-weight: 500;
+font-size: 20px;
+color: white;
+position: relative;
+top: 0.7em;
+text-align: left;
+left: 1em;
+}
+
+.articleSection .sectionThreeText {
+  font-size: 16px;
+  font-family: Open sans;
+  font-weight: 400;
+  color: white;
+  text-align: left;
+  margin-top: 25px;
+  margin-left: 25px;
+}
+
+.sectionthree {
+  display: flex;
+  flex-direction: column;
+}
+
+.sectionthree div a {
+  font-size: 11px;
+  color: #ff242a;
+  font-family: Open sans;
+  font-weight: 600;
+  text-align: left;
+  letter-spacing: 0.7px;
+  margin-left: -15em;
+}
+
+.sectionThreePartOne {
+  padding-left: 20px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.sectionThreePartOne img {
+  width: 35%;
+}
+
+.sectionThreePartTwo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-right: 15px;
+  padding-left: 20px;
+}
+
+.sectionThreePartTwo img {
+  width: 35%;
+}
+
+.paginationWrapper{
+  display: flex;
+  flex-direction: row;
+  background-color: #ff242a;
+  width: 90vw;
+height: 20vh;
+}
+
+.paginationNumber {
+  display: flex;
+  flex-direction: column;
+}
+
+.gridContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+   width: 2em;
+  height: 4em;
+  background-color: white;
+}
+
