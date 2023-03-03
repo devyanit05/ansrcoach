@@ -5,6 +5,7 @@
 
 const { instance } = require("../index");
 var crypto = require("crypto");
+const purchaseUser = require("../Models/purchaseUser");
 
 // payment controller
 // 1. create order
@@ -60,12 +61,22 @@ const getkey = async (req, res) => {
 
 // 4. & days trial timer
 const trialTimer = async (req, res) => {
-    const { paymentSuccessful, sClass, razorpay_order_id, razorpay_payment_id } = req.body;
+  const { paymentSuccessful, sClass, razorpay_order_id, razorpay_payment_id } = req.body;
 
   if (paymentSuccessful) {
     var trialEnded = false;
-
     let deadline = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
+
+
+    const paidUser = await purchaseUser.create({
+      paymentSuccessful: paymentSuccessful,
+      sClass: sClass,
+      rOrdererId: razorpay_order_id,
+      rPaymentId: razorpay_payment_id,
+      deadline: deadline,
+      trialEnded: trialEnded,
+    });
+
     let interval = setInterval(function () {
       let now = new Date();
       let diff = deadline - now;
@@ -75,13 +86,13 @@ const trialTimer = async (req, res) => {
       let secs = Math.floor((diff % (1000 * 60)) / 1000);
       console.log(
         days +
-          " days " +
-          hours +
-          " hours " +
-          mins +
-          " minutes " +
-          secs +
-          " seconds remaining"
+        " days " +
+        hours +
+        " hours " +
+        mins +
+        " minutes " +
+        secs +
+        " seconds remaining"
       );
       if (diff <= 0) {
         clearInterval(interval);
@@ -91,12 +102,22 @@ const trialTimer = async (req, res) => {
     }, 1000);
 
     let timerDetails = {
+      paidUser: paidUser,
+      deadline: deadline,
       days: days,
       hours: hours,
       mins: mins,
       secs: secs,
       trialEnded: trialEnded,
     };
+
+    const user = await purchaseUser.findById(rPaymentId);
+
+    if (user) {
+      await user.updateOne({ trialEnded })
+    } else {
+      console.log("There's some issue with this logic.")
+    }
 
     return res.json({
       body: timerDetails,

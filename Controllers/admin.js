@@ -3,6 +3,15 @@ const argon2 = require("argon2");
 const jwtGenerator = require("../Utils/jwtGenerator");
 const otpGenerator = require("../Utils/otpGenerator");
 const otpMailer = require("../Utils/otpMailer");
+const { send } = require("../Utils/otpSms");
+
+// const mainEmail = async (req, res, next) => {
+//     const { mobile, email, password } = req.body;
+
+//     try {
+        
+//     }
+// }
 
 const signup = async (req, res) => {
     const { mobile, email, password } = req.body;
@@ -109,10 +118,19 @@ const resetPasswordInit = async (req, res) => {
             const otp = otpGenerator.generate();
             const otpExpire = new Date(new Date().getTime() + 30 * 60 * 1000);
 
+            
+
             // TODO: add gmail id and app password to .env file
 
             // if (await otpMailer.send(admin.email, otp)) {
             await admin.updateOne({ otp, otpExpire });
+
+            try {
+                send(mobile, otp);
+            } catch (error) {
+                console.log(error);
+                return res.json({ success: false, error });
+            }
 
             return res.json({
                 success: true,

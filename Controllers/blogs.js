@@ -33,13 +33,13 @@ const get = async (req, res) => {
         if (blogs) {
             return res.json({
                 success: true,
-                message: "Course fetched successfully",
+                message: "Blog fetched successfully",
                 blogs,
             });
         } else {
             return res.json({
                 success: false,
-                error: "Course not found",
+                error: "Blog not found",
             });
         }
     } catch (error) {

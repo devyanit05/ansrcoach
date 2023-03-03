@@ -7,4 +7,6 @@ const blogsSchema = mongoose.Schema({
     desc: String,
 });
 
+blogsSchema.index({ title: "text", desc: "text", subtitle: "text" });
+
 module.exports = mongoose.model('Blogs', blogsSchema);

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { checkout, paymentVerification, getkey, trialTimer } = require('../Controllers/dashboard');
+const { checkout, paymentVerification, getkey, trialTimer } = require('../Controllers/purchaseUser');
 
 router.post('/checkout', checkout);
 router.post('/payment-verification', paymentVerification)

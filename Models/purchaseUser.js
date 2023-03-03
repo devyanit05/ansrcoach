@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
 
-const dashboardSchema = new mongoose.Schema({
-    rUserId: {
+const purchaseSchema = new mongoose.Schema({
+    rOrdererId: {
         type: String,
         required: true,
     },
@@ -15,10 +14,21 @@ const dashboardSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    lastDate: {
-        type: Number,
+    deadline: {
+        type: String,
         required: true,
     },
+    paymentSuccessful: {
+        type: Boolean,
+        required: true,
+    },
+    userMobile: {
+        type: Number,
+    },
+    trialEnded: {
+        type: Boolean,
+        required: true,
+    }
 });
 
-module.exports = mongoose.model("Dashboard", dashboardSchema);
+module.exports = mongoose.model("PurchaseUser", purchaseSchema);

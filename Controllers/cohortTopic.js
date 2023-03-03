@@ -8,6 +8,7 @@ const add = async (req, res) => {
             courseId,
             subjectId,
             name,
+            link
         });
 
         return res.json({
