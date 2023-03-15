@@ -51,7 +51,7 @@ const blogsRoutes = require("./Routes/blogs");
 const blogsFeatureRoutes = require("./Routes/blogsFeature");
 
 app.use("/user", userRoutes);
-app.use("/admin", adminRoutes);
+app.use("/admin", adminRoutes); // /admin/signup/local
 app.use("/course", courseRoutes);
 app.use("/course/price/demo", demoClassRoute);
 app.use("/course/price/live", liveClassRoute);

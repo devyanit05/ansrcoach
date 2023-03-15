@@ -1,7 +1,7 @@
 const CohortTopic = require("../Models/cohortTopic");
 
 const add = async (req, res) => {
-    const { courseId, subjectId, name } = req.body;
+    const { courseId, subjectId, name, link } = req.body;
 
     try {
         const cohortTopic = await CohortTopic.create({
@@ -20,6 +20,21 @@ const add = async (req, res) => {
         return res.json({ success: false, error });
     }
 };
+
+const update = async (req, res) => {
+    const { courseId, subjectId = null, name = null } = req.body;
+
+    const course = await CohortTopic.findById(courseId);
+
+    if (course) {
+        await course.updateOne({ subjectId, name });
+        res.send("Updated successfully");
+    } else {
+        res.send(
+            "CohortTopic not found"
+        )
+    }
+}
 
 const getByCourse = async (req, res) => {
     const { courseId } = req.params;
@@ -55,6 +70,7 @@ const get = async (req, res) => {
 
 module.exports = {
     add,
+    update,
     getByCourse,
     get,
 };

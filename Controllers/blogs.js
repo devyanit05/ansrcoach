@@ -13,6 +13,31 @@ const postblogs = async (req, res) => {
     })
 }
 
+const updateBlog = async (req, res) => {
+    const { blogId, title = null, subtitle = null, desc = null } = req.body
+    const blog = await Blogs.findById(blogId);
+
+    if (blog) {
+        if (title) {
+            await blog.update({ title })
+            res.send("Blog title updated successfully:" + blog)
+        } else if (subtitle) {
+            await blog.update({ desc })
+            res.send("Blog subtitle updated successfully:" + blog)
+        } else if (desc) {
+            await blog.update({ desc })
+            res.send("Blog desc updated successfully:" + blog)
+        } else {
+            await blog.update({ title, desc })
+            res.send("Blog title and desc updated successfully:" + blog)
+        }
+    } else {
+        res.json({
+            status: 404,
+            message: 'Blog not found',
+        })
+    }
+}
 
 const getblogs = async (req, res) => {
     Blogs.find({}, (err, Blogs) => {
@@ -51,6 +76,7 @@ const get = async (req, res) => {
 
 module.exports = {
     postblogs,
+    updateBlog,
     getblogs,
     get
 };

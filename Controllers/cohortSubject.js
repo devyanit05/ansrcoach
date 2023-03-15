@@ -25,6 +25,22 @@ const add = async (req, res) => {
     }
 };
 
+const update = async (req, res) => {
+    const { courseId, board = null, name = null, exclusive = null, backgroundColor = null, color = null, image = null } = req.body;
+
+    const course = await CohortSubject.findById(courseId);
+
+    if (course) {
+        await course.updateOne({ board, name, exclusive, backgroundColor, color, image });
+        res.send("Updated successfully");
+    } else {
+        res.send(
+            "CohortSubject not found"
+        )
+    }
+}
+
+
 const getByCourse = async (req, res) => {
     const { courseId } = req.params;
 
@@ -59,6 +75,7 @@ const get = async (req, res) => {
 
 module.exports = {
     add,
+    update,
     getByCourse,
     get,
 };

@@ -5,12 +5,13 @@ const { wordPost,
     classGet,
     subPost,
     subGet,
-    testimonials } = require('../Controllers/home')
+    // testimonials
+} = require('../Controllers/home')
 
 router.post('/classPost', classPost)
 router.post('/wordPost', wordPost)
 router.post('/subPost', subPost)
-router.post('/testimonials', testimonials)
+// router.post('/testimonials', testimonials)
 
 router.get('/classGet', classGet)
 router.get('/wordGet', wordGet)

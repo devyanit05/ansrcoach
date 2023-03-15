@@ -18,7 +18,6 @@ const cohortTopicSchema = new mongoose.Schema({
     },
     link: {
         type: String,
-        required: true,
     }
 });
 

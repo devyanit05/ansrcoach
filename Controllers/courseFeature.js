@@ -20,6 +20,21 @@ const add = async (req, res) => {
     }
 };
 
+const update = async (req, res) => {
+    const { courseId, title = null, desc = null } = req.body;
+
+    const course = await CourseFeature.findById(courseId);
+
+    if (course) {
+        await course.updateOne({ title, desc });
+        res.send("Updated successfully");
+    } else {
+        res.send(
+            "Course Feature not found"
+        )
+    }
+}
+
 const get = async (req, res) => {
     const { courseId } = req.params;
 
@@ -38,5 +53,6 @@ const get = async (req, res) => {
 
 module.exports = {
     add,
+    update,
     get,
 };

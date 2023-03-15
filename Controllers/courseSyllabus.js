@@ -1,14 +1,13 @@
 const CourseSyllabus = require("../Models/courseSyllabus");
 
 const add = async (req, res) => {
-    const { courseId, title, sClass, board } = req.body;
+    const { courseId, title, sClass } = req.body;
 
     try {
         const courseSyllabus = await CourseSyllabus.create({
             courseId,
             title,
             sClass,
-            board,
         });
 
         return res.json({
@@ -20,6 +19,22 @@ const add = async (req, res) => {
         return res.json({ success: false, error });
     }
 };
+
+const update = async (req, res) => {
+    const { courseId, sClass = null, title = null } = req.body;
+
+    const course = await CourseSyllabus.findById(courseId);
+
+    if (course) {
+        await course.updateOne({ title, sClass });
+        res.send("Updated successfully");
+    } else {
+        res.send(
+            "Course Syllabus not found"
+        )
+    }
+}
+
 const get = async (req, res) => {
     const { courseId } = req.params;
 
@@ -38,5 +53,6 @@ const get = async (req, res) => {
 
 module.exports = {
     add,
+    update,
     get,
 };

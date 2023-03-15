@@ -99,32 +99,32 @@ const subGet = async (req, res) => {
 
 
 
-const testimonials = async (req, res, next) => {
-    const { id, name, content, precentage, sClass } = req.body;
+// const testimonials = async (req, res, next) => {
+//     const { id, name, content, precentage, sClass } = req.body;
 
-    try {
-        const user = await User.findOne({ id });
+//     try {
+//         const user = await User.findOne({ id });
 
-        if (user) {
-            const testimonial = await Home.create({
-                id, name, content, precentage, sClass
-            });
+//         if (user) {
+//             const testimonial = await Home.create({
+//                 id, name, content, precentage, sClass
+//             });
 
-            return res.json({
-                success: true,
-                message: "Testimonial added",
-                body: testimonial
-            });
-        } else {
-            return res.json({
-                success: false,
-                message: "user not found"
-            });
-        }
-    } catch (error) {
-        return res.json({ success: false, error });
-    }
-};
+//             return res.json({
+//                 success: true,
+//                 message: "Testimonial added",
+//                 body: testimonial
+//             });
+//         } else {
+//             return res.json({
+//                 success: false,
+//                 message: "user not found"
+//             });
+//         }
+//     } catch (error) {
+//         return res.json({ success: false, error });
+//     }
+// };
 
 module.exports = {
     wordPost,
@@ -133,5 +133,5 @@ module.exports = {
     classGet,
     subPost,
     subGet,
-    testimonials
+    // testimonials
 };

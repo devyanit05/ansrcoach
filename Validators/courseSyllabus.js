@@ -1,5 +1,5 @@
 const addValidator = (req, res, next) => {
-    const { courseId, title, sClass, board } = req.body;
+    const { courseId, title, sClass } = req.body;
 
     if (!courseId) {
         return res.json({
@@ -22,12 +22,6 @@ const addValidator = (req, res, next) => {
         });
     }
 
-    if (!board) {
-        return res.json({
-            success: false,
-            error: "Board is required",
-        });
-    }
     next();
 };
 
